@@ -21,7 +21,6 @@ async function fetchAllCenturies() {
         return JSON.parse(localStorage.getItem('centuries'));
     }
     try {
-      onFetchStart()
       const response = await fetch(url);
       const data = await response.json();
       const records = data.records
@@ -30,8 +29,6 @@ async function fetchAllCenturies() {
       return records
     } catch (error) {
       console.error(error);
-    } finally {
-      onFetchEnd()
     }
 }
 
@@ -42,7 +39,6 @@ async function fetchAllClassifications() {
       return JSON.parse(localStorage.getItem('classifications'));
   }
   try {
-    onFetchStart()
     const response = await fetch(url);
     const data = await response.json();
     const classifications = data.records
@@ -50,8 +46,6 @@ async function fetchAllClassifications() {
     return classifications
   } catch (error) {
     console.error(error);
-  } finally {
-    onFetchEnd()
   }
 }
 
