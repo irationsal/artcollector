@@ -324,6 +324,8 @@ $('#preview').on('click', '.object-preview', function (event) {
 });
 
 $('#feature').on('click', 'a', async function (event) {
+  if (href.startsWith('mailto')) 
+    return
   // read href off of $(this) with the .attr() method
   event.preventDefault()
   const SEARCH_URL = $(this).attr('href')
