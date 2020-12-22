@@ -85,7 +85,7 @@ async function prefetchCategoryLists() {
   }
 }
 
-function buildSeachString() {
+function buildSearchString() {
   const classification = $("#select-classification").val()
   const century = $("#select-century").val()
   const keywords = $("#keywords").val()
@@ -267,7 +267,7 @@ $('#search').on('submit', async function (event) {
   try {
     onFetchStart()
     // get the url from `buildSearchString`
-    const SEARCH_URL = buildSeachString()
+    const SEARCH_URL = buildSearchString()
     // fetch it with await, store the result
     const result = await fetch(SEARCH_URL)
     console.log(result)
