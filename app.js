@@ -201,7 +201,7 @@ function renderFeature(record) {
       ${factHTML('Culture', culture, 'culture')}
       ${factHTML('Style', style)}
       ${factHTML('Technique', technique, 'technique')}
-      ${factHTML('Medium', medium.toLowerCase(), 'medium')}
+      ${factHTML('Medium', medium ? medium.toLowerCase() : null, 'medium')}
       ${factHTML('Dimensions', dimensions)}
       ${people ? people.map(
         (person) => factHTML('Person', person.displayname, 'person'))
