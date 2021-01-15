@@ -318,28 +318,30 @@ $('#preview').on('click', '.object-preview', function (event) {
 });
 
 $('#feature').on('click', 'a', async function (event) {
-  if (href.startsWith('mailto')) 
+  if (href.startsWith('mailto'))
     return
-  // read href off of $(this) with the .attr() method
-  const SEARCH_URL = $(this).attr('href')
-  //console.log("searchURL",SEARCH_URL)
-  // prevent default
-  event.preventDefault()
-  // call onFetchStart
-  try {
-    onFetchStart()
-    const response = await fetch(SEARCH_URL)
-    const data = await response.json()
-    console.log(data)
-    updatePreview(data.records, data.info)
-  } catch (error) {
-    console.log(error)
-  } finally {
-    onFetchEnd()
+  else {
+    // read href off of $(this) with the .attr() method
+    const SEARCH_URL = $(this).attr('href')
+    //console.log("searchURL",SEARCH_URL)
+    // prevent default
+    event.preventDefault()
+    // call onFetchStart
+    try {
+      onFetchStart()
+      const response = await fetch(SEARCH_URL)
+      const data = await response.json()
+      console.log(data)
+      updatePreview(data.records, data.info)
+    } catch (error) {
+      console.log(error)
+    } finally {
+      onFetchEnd()
+    }
+    // fetch the href
+    // render it into the preview
+    // call onFetchEnd
   }
-  // fetch the href
-  // render it into the preview
-  // call onFetchEnd
 });
 
 prefetchCategoryLists()
