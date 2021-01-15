@@ -321,11 +321,10 @@ $('#feature').on('click', 'a', async function (event) {
   if (href.startsWith('mailto')) 
     return
   // read href off of $(this) with the .attr() method
-  event.preventDefault()
   const SEARCH_URL = $(this).attr('href')
   //console.log("searchURL",SEARCH_URL)
   // prevent default
-
+  event.preventDefault()
   // call onFetchStart
   try {
     onFetchStart()
