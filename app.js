@@ -132,6 +132,7 @@ function renderPreview(record) {
 }
 
 function searchURL(searchType, searchString) {
+  console.log(searchType, searchString)
   return `${ BASE_URL }/object?${ KEY }&${ searchType}=${ searchString }`;
 }
 
