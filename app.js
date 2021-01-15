@@ -341,7 +341,6 @@ $('#feature').on('click', 'a', async function (event) {
     // fetch the href
     // render it into the preview
     // call onFetchEnd
-  }
 });
 
 prefetchCategoryLists()
